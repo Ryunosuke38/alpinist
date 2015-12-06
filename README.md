@@ -1,13 +1,4 @@
-# Rodakase Skeleton
-
-## Installation
-
-You can clone this skeleton using [Raygun](https://github.com/carbonfive/raygun):
-
-```
-gem install raygun
-raygun -p icelab/rodakase-skeleton your-app-name
-```
+# Alpinist
 
 ## Development
 
