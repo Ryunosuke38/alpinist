@@ -11,7 +11,7 @@ require "rom/sql/rake_task"
 require "sequel"
 namespace :db do
   task :setup do
-    Alpinist::Container.boot!(:rom)
+    Alpinist::Container.boot! :rom
   end
 
   # The following migration tasks are adapted from https://gist.github.com/kalmbach/4471560
