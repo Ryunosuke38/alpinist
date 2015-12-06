@@ -40,11 +40,17 @@ namespace :db do
     end
   end
 
-  desc "Perform migration up to latest migration available"
-  task :migrate do
-    # The migrate task is provided by ROM.
+  task :check_migrations_exist do
+    unless Dir["db/migrate/*.rb"].any?
+      puts "No migrations found"
+      exit 1
+    end
+  end
 
-    # Once it finishes, we want to dump the db structure:
+  # Enhance the migration task provided by ROM
+  desc "Perform migration up to latest migration available"
+  task :migrate => [:check_migrations_exist] do
+    # Once db:migrate finishes, dump the db structure:
     Rake::Task["db:structure:dump"].execute
 
     # And print the current migration version:
