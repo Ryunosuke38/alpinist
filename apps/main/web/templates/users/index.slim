@@ -3,4 +3,8 @@ h1 Users
 - users.each do |user|
   p
     => user.name
-    = "<#{user.email}>"
+    => "<#{user.email}>"
+    a> href="/users/#{user.id}/edit" Edit
+
+p
+  a href="/users/new" New user
