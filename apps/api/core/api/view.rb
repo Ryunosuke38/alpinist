@@ -5,11 +5,11 @@ require "api/container"
 require "api/page"
 
 module Api
-  Container.register "page", Page.new(Container.config)
+  Container.register "api.page", Page.new(Container.config)
 
   class View < Rodakase::View::Layout
     setting :root, Container.root.join("web/templates")
-    setting :scope, Container["page"]
+    setting :scope, Container["api.page"]
     setting :engine, :slim
     setting :name, "application"
 

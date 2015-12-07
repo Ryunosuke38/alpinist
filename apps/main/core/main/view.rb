@@ -5,11 +5,11 @@ require "main/container"
 require "main/page"
 
 module Main
-  Container.register "page", Page.new(Container.config)
+  Container.register "main.page", Page.new(Container.config)
 
   class View < Rodakase::View::Layout
     setting :root, Container.root.join("web/templates")
-    setting :scope, Container["page"]
+    setting :scope, Container["main.page"]
     setting :engine, :slim
     setting :name, "application"
 

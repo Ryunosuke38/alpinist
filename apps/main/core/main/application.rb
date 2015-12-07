@@ -17,7 +17,7 @@ module Main
     plugin :flash
 
     route do |r|
-      self.class.config.container["page"].flash_messages = flash
+      self.class.config.container["main.page"].flash_messages = flash
 
       r.root do
         r.resolve "views.home" do |home|
