@@ -16,8 +16,10 @@ gem "rom-sql", git: "https://github.com/rom-rb/rom-sql"
 gem "rom-support", git: "https://github.com/rom-rb/rom-support"
 
 # Application dependencies
+gem "bcrypt-ruby"
 gem "call_sheet", git: "https://github.com/icelab/call_sheet"
 gem "dry-data", git: "https://github.com/dryrb/dry-data"
+gem "dry-equalizer"
 gem "dry-validation", git: "https://github.com/dryrb/dry-validation"
 gem "either_result_matcher"
 gem "slim"

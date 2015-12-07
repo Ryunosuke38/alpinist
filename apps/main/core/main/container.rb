@@ -3,6 +3,7 @@ module Main
     setting :root, Pathname(__FILE__).join("../..").realpath.dirname.freeze
     setting :auto_register, %w(
       lib/main/operations
+      lib/main/sessions
       lib/main/validation
       lib/main/views
     )

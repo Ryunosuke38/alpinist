@@ -25,9 +25,33 @@ module Main
         end
       end
 
+      r.on "sign_in" do
+        r.is to: "main.views.sign_in"
+      end
+
+      r.on "sessions" do
+        r.post do
+          r.resolve "main.sessions.sign_in" do |sign_in|
+            if sign_in.(r[:user], session)
+              r.redirect "/users"
+            else
+              r.redirect "/sign_in"
+            end
+          end
+        end
+      end
+
       r.multi_route
     end
 
     load_routes!
+
+    def current_user
+      env["alpinist.current_user"]
+    end
+
+    def set_current_user!(user)
+      env["alpinist.current_user"] = user
+    end
   end
 end

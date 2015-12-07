@@ -2,9 +2,9 @@ require "main/view"
 
 module Main
   module Views
-    class Home < Main::View
+    class SignIn < Main::View
       configure do |config|
-        config.template = "home"
+        config.template = "sign_in"
       end
     end
   end
