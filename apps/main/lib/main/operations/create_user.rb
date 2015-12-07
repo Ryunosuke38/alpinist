@@ -26,7 +26,7 @@ module Main
 
       def prepare_attributes(params)
         attrs = transformer.(params)
-        attrs.merge(encrypted_password: encrypt_password.(attrs[:password]))
+        attrs.merge(encrypted_password: encrypt_password.(params[:password]))
       end
 
       def transformer
