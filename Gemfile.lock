@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/dryrb/dry-validation
-  revision: 727c1fb5448c47c0fa7490559269dbd21fe6b1c5
+  revision: 7c0825b3114a5f1141c5a2982ae8bfc620862158
   specs:
     dry-validation (0.2.0)
       dry-configurable (~> 0.1)

@@ -1,0 +1,7 @@
+p
+  | Looks like we couldn’t save this user.
+
+  ul
+    - errors.each do |key, messages|
+      - messages.each do |message|
+        li = message
