@@ -10,7 +10,7 @@ module Main
 
         def locals(options = {})
           {
-            user: options[:user],
+            params: options[:params],
             errors: options[:errors]
           }
         end

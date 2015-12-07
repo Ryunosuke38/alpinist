@@ -12,14 +12,14 @@ module Main
 
         r.post do
           r.resolve "main.operations.update_user" do |update_user|
-            update_user.(r[:user]).match do |m|
+            update_user.(user_id, r[:user]).match do |m|
               m.success do
                 r.redirect "/users"
               end
 
               m.failure do |errors|
                 r.resolve "main.views.users.edit" do |view|
-                  view.(user: r[:user], errors: errors)
+                  view.(id: user_id, params: r[:user], errors: errors)
                 end
               end
             end
@@ -36,7 +36,7 @@ module Main
 
             m.failure do |errors|
               r.resolve "main.views.users.new" do |view|
-                view.(user: r[:user], errors: errors)
+                view.(params: r[:user], errors: errors)
               end
             end
           end

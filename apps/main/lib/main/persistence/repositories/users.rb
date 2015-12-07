@@ -7,7 +7,7 @@ module Main
         relations :users
 
         def [](id)
-          users.where(id: id).as(Entities::User).one
+          users.by_id(id).as(Entities::User).one
         end
 
         def by_email(email)

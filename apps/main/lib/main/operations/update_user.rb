@@ -5,19 +5,23 @@ require "transproc"
 
 module Main
   module Operations
-    class CreateUser
-      include Main::Import("main.sessions.encrypt_password", "main.validation.user_form_schema", "persistence.update_user")
+    class UpdateUser
+      include Main::Import(
+        "main.sessions.encrypt_password",
+        "main.validation.user_form_schema",
+        "persistence.update_user"
+      )
 
       extend Transproc::Registry
       import Transproc::HashTransformations
 
-      def call(params = {})
+      def call(user_id, params = {})
         validation = user_form_schema.(params)
 
         if validation.messages.any?
           Left(validation.messages)
         else
-          result = update_user.(prepare_attributes(validation.params))
+          result = update_user.by_id(user_id).(prepare_attributes(validation.params))
           Right(Entities::User.new(result))
         end
       end
