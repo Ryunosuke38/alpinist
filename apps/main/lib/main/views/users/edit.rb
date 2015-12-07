@@ -16,7 +16,7 @@ module Main
 
           {
             user: user,
-            params: user_attrs(user),
+            params: options.fetch(:params) { user_attrs(user) },
             errors: options[:errors],
           }
         end
