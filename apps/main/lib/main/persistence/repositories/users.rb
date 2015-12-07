@@ -13,6 +13,10 @@ module Main
         def by_email(email)
           users.where(email: email).as(Entities::User).first
         end
+
+        def index(page: 1, per_page: 40)
+          users.per_page(per_page).page(page).as(Entities::User)
+        end
       end
     end
   end
