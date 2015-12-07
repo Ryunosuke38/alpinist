@@ -1,4 +1,4 @@
-require_relative "main/container"
+require_relative "api/container"
 
 Api::Container.finalize! do |container|
   container.auto_register! "lib/main/persistence/repositories" do |repo_class|
@@ -6,8 +6,8 @@ Api::Container.finalize! do |container|
   end
 end
 
-require "main/application"
-require "main/view"
-require "main/transactions"
+require "api/application"
+require "api/view"
+require "api/transactions"
 
 Api::Container.require "transactions/**/*.rb"

@@ -2,9 +2,9 @@ module Api
   class Container < Rodakase::Container
     setting :root, Pathname(__FILE__).join("../..").realpath.dirname.freeze
     setting :auto_register, %w(
-      lib/main/operations
-      lib/main/validation
-      lib/main/views
+      lib/api/operations
+      lib/api/validation
+      lib/api/views
     )
 
     configure do

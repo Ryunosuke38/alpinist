@@ -1,8 +1,8 @@
 require "slim"
 require "rodakase/view"
 
-require "main/container"
-require "main/page"
+require "api/container"
+require "api/page"
 
 module Api
   Container.register "page", Page.new(Container.config)

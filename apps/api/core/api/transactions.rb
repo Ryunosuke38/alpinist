@@ -1,4 +1,4 @@
-require 'main/container'
+require "api/container"
 
 module Api
   module Transactions
