@@ -22,6 +22,7 @@ gem "dry-data", git: "https://github.com/dryrb/dry-data"
 gem "dry-equalizer"
 gem "dry-validation", git: "https://github.com/dryrb/dry-validation"
 gem "either_result_matcher"
+gem "i18n"
 gem "slim"
 gem "transproc", git: "https://github.com/solnic/transproc"
 
