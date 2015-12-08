@@ -8,7 +8,7 @@ module Main
     class UpdateUser
       include Main::Import(
         "main.authentication.encrypt_password",
-        "main.validation.user_form_schema",
+        "main.validation.update_user_form_schema",
         "persistence.update_user"
       )
 
@@ -16,9 +16,10 @@ module Main
       import Transproc::HashTransformations
 
       def call(user_id, params = {})
-        validation = user_form_schema.(params)
+        validation = update_user_form_schema.(params)
 
-        if validation.messages.any?
+        # TODO: work out if it's a dry-v bug requiring us to to_a here (atm, messages is `nil` when valid params are passed)
+        if validation.messages.to_a.any?
           Left(validation.messages)
         else
           result = update_user.by_id(user_id).(prepare_attributes(validation.params))
@@ -30,7 +31,11 @@ module Main
 
       def prepare_attributes(params)
         attrs = transformer.(params)
-        attrs.merge(encrypted_password: encrypt_password.(params[:password]))
+        if params[:password].to_s != ""
+          attrs.merge(encrypted_password: encrypt_password.(params[:password]))
+        else
+          attrs
+        end
       end
 
       def transformer
