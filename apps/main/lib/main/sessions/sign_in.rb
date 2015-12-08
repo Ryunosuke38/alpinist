@@ -3,7 +3,7 @@ require "main/import"
 module Main
   module Sessions
     class SignIn
-      include Main::Import("main.sessions.authenticate")
+      include Main::Import("main.authentication.authenticate")
 
       def call(input, session)
         user = authenticate.(input)

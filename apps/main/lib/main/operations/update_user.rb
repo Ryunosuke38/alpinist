@@ -7,7 +7,7 @@ module Main
   module Operations
     class UpdateUser
       include Main::Import(
-        "main.sessions.encrypt_password",
+        "main.authentication.encrypt_password",
         "main.validation.user_form_schema",
         "persistence.update_user"
       )

@@ -1,9 +1,9 @@
 require "main/import"
 
 module Main
-  module Sessions
+  module Authentication
     class Authenticate
-      include Main::Import("main.sessions.encrypt_password", "main.persistence.repositories.users")
+      include Main::Import("main.authentication.encrypt_password", "main.persistence.repositories.users")
 
       def call(attributes)
         email, password = attributes.values_at("email", "password")

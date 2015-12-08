@@ -1,7 +1,7 @@
 require "bcrypt"
 
 module Main
-  module Sessions
+  module Authentication
     class EncryptPassword
       include BCrypt
 
