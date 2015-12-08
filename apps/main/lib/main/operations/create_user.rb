@@ -6,7 +6,11 @@ require "transproc"
 module Main
   module Operations
     class CreateUser
-      include Main::Import("main.authentication.encrypt_password", "main.validation.user_form_schema", "persistence.create_user")
+      include Main::Import(
+        "main.authentication.encrypt_password",
+        "main.validation.user_form_schema",
+        "persistence.create_user"
+      )
 
       extend Transproc::Registry
       import Transproc::HashTransformations
