@@ -16,15 +16,14 @@ module Main
 
           {
             user: user,
-            params: options.fetch(:params) { user_attrs(user) },
+            params: options.fetch(:params) { form_params(user) },
             errors: options[:errors],
           }
         end
 
         private
 
-        # TODO: Find a less laborious way to do this
-        def user_attrs(user)
+        def form_params(user)
           %w(name email).map { |attr| [attr, user.send(attr)] }.to_h
         end
       end
