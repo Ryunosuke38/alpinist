@@ -1,2 +1,7 @@
 en:
   hello: hello world
+  errors:
+    rules:
+      email:
+        filled?: "Please provide your email, yo"
+    filled?: "Fill this thing, yo"
