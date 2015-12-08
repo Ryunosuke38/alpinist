@@ -18,8 +18,7 @@ module Main
       def call(user_id, params = {})
         validation = update_user_form_schema.(params)
 
-        # TODO: work out if it's a dry-v bug requiring us to to_a here (atm, messages is `nil` when valid params are passed)
-        if validation.messages.to_a.any?
+        if validation.messages.any?
           Left(validation.messages)
         else
           result = update_user.by_id(user_id).(prepare_attributes(validation.params))
