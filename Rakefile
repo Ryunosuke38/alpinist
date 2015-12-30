@@ -16,7 +16,7 @@ namespace :db do
 
   # The following migration tasks are adapted from https://gist.github.com/kalmbach/4471560
   Sequel.extension :migration
-  DB = Sequel.connect(Alpinist::Container.config.app.database_url)
+  DB = Sequel.connect(Alpinist::Container.options.database_url)
 
   desc "Prints current schema version"
   task :version do

@@ -9,7 +9,7 @@ module Main
       include Main::Import(
         "main.authentication.encrypt_password",
         "main.validation.update_user_form_schema",
-        "persistence.update_user"
+        "core.persistence.update_user"
       )
 
       extend Transproc::Registry

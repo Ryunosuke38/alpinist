@@ -2,14 +2,14 @@ require "rom"
 require "rom-repository"
 
 Alpinist::Container.namespace "persistence" do |container|
-  ROM.use :auto_registration
-  ROM.setup :sql, container.config.app.database_url
+  config = ROM::Configuration.new(:sql, Alpinist::Container.options.database_url)
 
-  %w(relations commands).each do |type|
-    Dir[container.root.join("lib/persistence/#{type}/**/*.rb")].each(&method(:require))
+  container.register('config', config)
+
+  container.require('core/container/persistence')
+
+  container.finalize(:rom) do
+    config.auto_registration(container.root.join('lib/persistence'))
+    container.register('rom', ROM.container(config))
   end
-
-  container.register "rom", ROM.finalize.container
-
-  container.require "core/container/persistence"
 end
