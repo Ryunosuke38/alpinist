@@ -1,3 +1,4 @@
+require "rom-repository"
 require "main/entities/user"
 
 module Main
