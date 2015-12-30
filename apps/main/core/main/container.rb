@@ -2,6 +2,7 @@ module Main
   class Container < Rodakase::Container
     setting :root, Pathname(__FILE__).join("../..").realpath.dirname.freeze
     setting :auto_register, %w(
+      lib/main/authentication
       lib/main/operations
       lib/main/sessions
       lib/main/validation
