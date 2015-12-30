@@ -30,15 +30,6 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: schema_info; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE schema_info (
-    version integer DEFAULT 0 NOT NULL
-);
-
-
---
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
