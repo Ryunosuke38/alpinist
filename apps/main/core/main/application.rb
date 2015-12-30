@@ -20,7 +20,7 @@ module Main
       self.class.config.container["main.page"].flash_messages = flash
 
       r.root do
-        r.resolve "views.home" do |home|
+        r.resolve "main.views.home" do |home|
           home.()
         end
       end
