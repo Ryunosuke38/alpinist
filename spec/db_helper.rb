@@ -1,6 +1,7 @@
 require_relative "spec_helper"
 
-Alpinist::Container.boot!(:rom)
+Alpinist::Container.boot! :i18n
+Alpinist::Container.boot! :rom
 
 Dir[SPEC_ROOT.join("support/db/*.rb").to_s].each(&method(:require))
 Dir[SPEC_ROOT.join("shared/db/*.rb").to_s].each(&method(:require))

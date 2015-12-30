@@ -1,3 +1,5 @@
+require "byebug" if ENV["RACK_ENV"] == "development"
+
 require_relative "alpinist/container"
 
 Alpinist::Container.finalize! do |container|
