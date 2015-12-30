@@ -48,14 +48,11 @@ module Main
         end
       end
 
-      r.on "sessions" do
+      r.on "sign_out" do
         r.post do
-          r.resolve "main.sessions.sign_in" do |sign_in|
-            if sign_in.(r[:user], session)
-              r.redirect "/users"
-            else
-              r.redirect "/sign_in"
-            end
+          r.resolve "main.sessions.sign_out" do |sign_out|
+            sign_out.(session)
+            r.redirect "/sign_in"
           end
         end
       end
