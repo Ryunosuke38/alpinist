@@ -26,7 +26,26 @@ module Main
       end
 
       r.on "sign_in" do
-        r.is to: "main.views.sign_in"
+        r.resolve "main.authentication.authorize" do |authorize|
+          authorize.(session) do |user|
+            if user
+              r.redirect "/users"
+            end
+
+            r.post do
+              r.resolve "main.sessions.sign_in" do |sign_in|
+                if sign_in.(r[:user], session)
+                  r.redirect "/users"
+                else
+                  # TODO: render with email kept in place, instead of redirect
+                  r.redirect "/sign_in"
+                end
+              end
+            end
+
+            r.is to: "main.views.sign_in"
+          end
+        end
       end
 
       r.on "sessions" do
