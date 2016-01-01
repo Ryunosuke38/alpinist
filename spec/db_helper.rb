@@ -7,7 +7,7 @@ Dir[SPEC_ROOT.join("support/db/*.rb").to_s].each(&method(:require))
 Dir[SPEC_ROOT.join("shared/db/*.rb").to_s].each(&method(:require))
 
 require "database_cleaner"
-DatabaseCleaner[:sequel, connection: TestHelpers.db_connection].strategy = :truncation
+DatabaseCleaner[:sequel, connection: TestHelpers.db_connection].strategy = :transaction
 
 RSpec.configure do |config|
   config.include TestHelpers

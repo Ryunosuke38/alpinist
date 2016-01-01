@@ -1,94 +1,93 @@
 GIT
-  remote: https://github.com/dryrb/dry-data
-  revision: f19956a24b47b31fac4c53a7e320e5472224a251
-  specs:
-    dry-data (0.2.1)
-      dry-container (~> 0.2)
-      inflecto (~> 0.0.0, >= 0.0.2)
-      kleisli (~> 0.2)
-
-GIT
-  remote: https://github.com/dryrb/dry-validation
-  revision: 0bde77d29427546ff7a8df76a9459fa8116c3634
-  specs:
-    dry-validation (0.3.0)
-      dry-configurable (~> 0.1)
-      dry-container (~> 0.2, >= 0.2.6)
-      dry-data (~> 0.2, >= 0.2.1)
-      dry-equalizer (~> 0.2)
-
-GIT
   remote: https://github.com/icelab/call_sheet
-  revision: face0888b385af571d50a9bf8aa2f25be4be2c6a
+  revision: 1e4e8af9b2a9d8d112423c51824c7808f007ee2f
+  branch: master
   specs:
-    call_sheet (0.3.2)
-      kleisli
+    call_sheet (0.2.0)
+      deterministic (>= 0.15.3)
       wisper (>= 1.6.0)
 
 GIT
   remote: https://github.com/rom-rb/rom
-  revision: 82a438f8427991af38ec9e9e516ff627068969cc
+  revision: 8b01dd1489941165daf9053ec3eb279031a497c6
+  branch: master
   specs:
-    rom (1.0.0.beta1)
-      equalizer (~> 0.0, >= 0.0.9)
-      rom-mapper (~> 0.3.0.beta1)
-      rom-support (~> 1.0.0.beta1)
+    rom (1.0.0.rc1)
+      dry-equalizer (~> 0.2)
+      rom-mapper (~> 0.3.0.rc1)
+      rom-support (~> 1.0.0.rc1)
 
 GIT
   remote: https://github.com/rom-rb/rom-mapper
-  revision: e07b7f5a89f0b57fcfe076f45ed729dec9e626ff
+  revision: d61d53300885f2febacba1951913a32a146f130a
+  branch: master
   specs:
-    rom-mapper (0.3.0.beta1)
-      equalizer (~> 0.0, >= 0.0.10)
-      rom-support (~> 1.0.0.beta1)
+    rom-mapper (0.3.0.rc1)
+      dry-equalizer (~> 0.2)
+      rom-support (~> 1.0.0.rc1)
 
 GIT
   remote: https://github.com/rom-rb/rom-repository
-  revision: 306bcc46dbd07e1332bc7236372f81bab3f1dfa5
+  revision: 44f2ab33f15511f0794b2e40a73fc58608afe850
+  branch: master
   specs:
-    rom-repository (0.2.0.beta1)
+    rom-repository (0.2.0.rc1)
       anima (~> 0.2, >= 0.2)
-      rom (~> 1.0.0.beta1)
-      rom-mapper (~> 0.3.beta1)
-      rom-support (~> 1.0.0.beta1)
+      rom (~> 1.0.0.rc1)
+      rom-mapper (~> 0.3.0.rc1)
+      rom-support (~> 1.0.0.rc1)
 
 GIT
   remote: https://github.com/rom-rb/rom-sql
-  revision: 0a17586961eb2d02d74e4b34d31f64ce3bf99d66
+  revision: 47d1faa56e0a308c57898ec44d65259720cb73e8
+  branch: master
   specs:
-    rom-sql (0.7.0.beta1)
-      equalizer (~> 0.0, >= 0.0.9)
-      rom (~> 1.0.0.beta1)
+    rom-sql (0.7.0.rc1)
+      dry-equalizer (~> 0.2)
+      rom (~> 1.0.0.rc1)
       sequel (~> 4.18)
 
 GIT
   remote: https://github.com/rom-rb/rom-support
-  revision: c0bdb013b1c4546038db4bec501303bf16eb42ad
+  revision: cddd39dfc06e9ed519c465abee594015e4f8dd75
+  branch: master
   specs:
-    rom-support (1.0.0.beta1)
+    rom-support (1.0.0.rc1)
+      dry-equalizer (~> 0.2)
       transproc (~> 0.4.0)
       wisper (~> 1.6, >= 1.6.0)
 
 GIT
-  remote: https://github.com/solnic/transproc
-  revision: dcd3f83bda5607ebb6ddf1f5dfe648ac0cfb2f86
-  specs:
-    transproc (0.4.0)
-
-GIT
-  remote: https://github.com/timriley/rodakase
-  revision: db6f6ad46df83f38d9489906ef71ab45858e326e
-  branch: null-view-parts
+  remote: https://github.com/solnic/rodakase
+  revision: 65f733856c89c45f0bbb1157c3e342d467c5911c
+  branch: master
   specs:
     rodakase (0.0.1)
-      dry-auto_inject (~> 0.1)
+      dry-component (~> 0)
       dry-configurable (~> 0.1)
-      dry-container (~> 0.2)
       dry-equalizer (~> 0.2)
       inflecto (~> 0)
       roda (~> 2.7)
       tilt (~> 2.0)
       transflow (~> 0.3)
+
+GIT
+  remote: https://github.com/solnic/transproc
+  revision: ef7cbef5d22fffd53beadf5c28abdb4975a02c45
+  branch: master
+  specs:
+    transproc (0.4.0)
+
+GIT
+  remote: https://github.com/timriley/dry-component
+  revision: a7bb18a0d89f87b0d5ddb1a7dd40f126d777c614
+  branch: import-containers-for-import-module
+  specs:
+    dry-component (0.0.2)
+      dry-auto_inject (~> 0.1)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2, >= 0.2.7)
+      inflecto (>= 0.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -119,15 +118,28 @@ GEM
     coderay (1.1.0)
     columnize (0.9.0)
     database_cleaner (1.5.1)
+    deterministic (0.15.3)
     diff-lcs (1.2.5)
     dry-auto_inject (0.1.0)
     dry-configurable (0.1.2)
       thread_safe
-    dry-container (0.2.6)
+    dry-container (0.2.7)
       dry-configurable (= 0.1.2)
       thread_safe
+    dry-data (0.4.2)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2)
+      dry-equalizer (~> 0.2)
+      inflecto (~> 0.0.0, >= 0.0.2)
+      kleisli (~> 0.2)
+      thread_safe (~> 0.3)
     dry-equalizer (0.2.0)
     dry-pipeline (0.0.1)
+    dry-validation (0.4.1)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2, >= 0.2.6)
+      dry-data (~> 0.4, >= 0.4.2)
+      dry-equalizer (~> 0.2)
     either_result_matcher (0.1.0)
       kleisli
     equalizer (0.0.11)
@@ -150,7 +162,7 @@ GEM
     i18n (0.7.0)
     ice_nine (0.11.1)
     inflecto (0.0.2)
-    kleisli (0.2.6)
+    kleisli (0.2.7)
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.0.3)
@@ -183,7 +195,7 @@ GEM
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    roda (2.8.0)
+    roda (2.9.0)
       rack
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
@@ -198,7 +210,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
-    sequel (4.28.0)
+    sequel (4.29.0)
     shellany (0.0.1)
     shotgun (0.9.1)
       rack (>= 1.0)
@@ -230,9 +242,10 @@ DEPENDENCIES
   capybara
   capybara-screenshot
   database_cleaner
-  dry-data!
+  dry-component!
+  dry-data
   dry-equalizer
-  dry-validation!
+  dry-validation
   either_result_matcher
   guard-rspec
   i18n
@@ -253,4 +266,4 @@ DEPENDENCIES
   transproc!
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

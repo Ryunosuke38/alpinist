@@ -1,22 +1,26 @@
 module Main
   class Container < Rodakase::Container
-    setting :root, Pathname(__FILE__).join("../..").realpath.dirname.freeze
-    setting :auto_register, %w(
-      lib/main/authentication
-      lib/main/operations
-      lib/main/sessions
-      lib/main/validation
-      lib/main/views
-    )
+    require root.join('core/alpinist/container')
+    import Alpinist::Container
 
-    configure do
-      # Copy global app config into place (needed to configure
-      # Alpinist::Assets)
-      #
-      # TODO: make this nicer
-      config.app = Alpinist::Container.config.app
+    configure do |config|
+      config.root = Pathname(__FILE__).join("../..").realpath.dirname.freeze
 
-      load_paths! "lib", "core"
+      config.auto_register = %w(
+        lib/main/authentication
+        lib/main/operations
+        lib/main/sessions
+        lib/main/validation
+        lib/main/views
+      )
     end
+
+    # Copy global app config into place (needed to configure
+    # Alpinist::Assets)
+    #
+    # TODO: make this nicer
+    config.options = Alpinist::Container.options
+
+    load_paths! "lib", "core"
   end
 end

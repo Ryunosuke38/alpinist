@@ -11,7 +11,7 @@ module Api
 
     opts[:root] = Pathname(__FILE__).join("../..").realpath.dirname
 
-    use Rack::Session::Cookie, key: "alpinist.session", secret: Alpinist::Container.config.app.session_secret
+    use Rack::Session::Cookie, key: "alpinist.session", secret: Container.options.session_secret
 
     plugin :indifferent_params
     plugin :flash
