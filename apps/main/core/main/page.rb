@@ -17,7 +17,7 @@ module Main
       @assets ||= Alpinist::Assets.new(
         env: config.env,
         root: config.root,
-        server_url: config.app.assets_server_url)
+        server_url: config.options.assets_server_url)
     end
   end
 end
