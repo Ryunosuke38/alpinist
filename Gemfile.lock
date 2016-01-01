@@ -1,15 +1,4 @@
 GIT
-  remote: https://github.com/dryrb/dry-component
-  revision: f9176def1c47111f6061da2e0e7efd75642ac86f
-  branch: master
-  specs:
-    dry-component (0.0.2)
-      dry-auto_inject (~> 0.1)
-      dry-configurable (~> 0.1)
-      dry-container (~> 0.2, >= 0.2.7)
-      inflecto (>= 0.0.2)
-
-GIT
   remote: https://github.com/icelab/call_sheet
   revision: 1e4e8af9b2a9d8d112423c51824c7808f007ee2f
   branch: master
@@ -74,9 +63,8 @@ GIT
   branch: master
   specs:
     rodakase (0.0.1)
-      dry-auto_inject (~> 0.1)
+      dry-component (~> 0)
       dry-configurable (~> 0.1)
-      dry-container (~> 0.2)
       dry-equalizer (~> 0.2)
       inflecto (~> 0)
       roda (~> 2.7)
@@ -89,6 +77,17 @@ GIT
   branch: master
   specs:
     transproc (0.4.0)
+
+GIT
+  remote: https://github.com/timriley/dry-component
+  revision: a7bb18a0d89f87b0d5ddb1a7dd40f126d777c614
+  branch: import-containers-for-import-module
+  specs:
+    dry-component (0.0.2)
+      dry-auto_inject (~> 0.1)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2, >= 0.2.7)
+      inflecto (>= 0.0.2)
 
 GEM
   remote: https://rubygems.org/
