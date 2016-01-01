@@ -11,13 +11,12 @@ module Api
         lib/api/validation
         lib/api/views
       )
-
-      # Copy global app config into place (needed to configure
-      # Alpinist::Assets)
-      #
-      # TODO: make this nicer
     end
 
+    # Copy global app config into place (needed to configure
+    # Alpinist::Assets)
+    #
+    # TODO: make this nicer
     config.options = Alpinist::Container.options
 
     load_paths! "lib", "core"
